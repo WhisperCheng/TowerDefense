@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int vidas;
+    int vidasJugador;
     int dinero;
     float tiempo = 60;
     public static GameManager Instance { get; private set;}
@@ -19,13 +19,22 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            vidas = 3;
+            vidasJugador = 3;
             dinero = 50;
         }
     }
     private void Update()
     {
         tiempo -= Time.deltaTime;
+    }
+    public void QuitarVidaJugador()
+    {
+        vidasJugador--;
+        if (vidasJugador == 0)
+        {
+            Time.timeScale = 0;
+        }
+        Debug.Log(vidasJugador);
     }
 
 }
