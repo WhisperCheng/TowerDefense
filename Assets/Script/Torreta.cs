@@ -17,14 +17,12 @@ public class Torreta : MonoBehaviour
     void Start()
     {
         detectadoEnemigo = false;
-        NumBalas = 2;   
+        NumBalas = 10;   
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Error si el enemigo se acerca mucho a la torreta, la torreta tiende a mirar arriba haciendo que se vea extraño: Cambiar origen en el Blender
-
         int mascara = 1 << 6;
 
         Collider[] detectado = Physics.OverlapSphere(transform.position, 2.5f, mascara);
@@ -47,7 +45,7 @@ public class Torreta : MonoBehaviour
                     balaClon.GetComponent<Rigidbody>().AddForce(transform.forward * 10, ForceMode.Impulse);
                     if (NumBalas == 0)
                     {
-                        //Destroy(gameObject);
+                        Destroy(gameObject);
                     }
                 }
             }

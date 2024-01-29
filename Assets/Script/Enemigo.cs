@@ -21,11 +21,15 @@ public class Enemigo : MonoBehaviour
     {
         //agent.destination = Objetivo.transform.position;
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Copa")
         {
-            collision.gameObject.GetComponent<GameManager>().QuitarVidaJugador();
+            Debug.Log(collision.gameObject.tag);
+
+            //ERROR con el calculo de vida del GameManager
+
+            //collision.gameObject.GetComponent<GameManager>().QuitarVidaJugador();
             Destroy(gameObject);
         }
     }

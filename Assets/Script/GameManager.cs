@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     int vidasJugador;
     int dinero;
-    float tiempo = 60;
+    float tiempo;
     public static GameManager Instance { get; private set;}
 
     private void Awake()
@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
             Instance = this;
             vidasJugador = 3;
             dinero = 50;
+            tiempo = 60;
         }
     }
     private void Update()
@@ -30,11 +31,11 @@ public class GameManager : MonoBehaviour
     public void QuitarVidaJugador()
     {
         vidasJugador--;
+        Debug.Log(vidasJugador);
         if (vidasJugador == 0)
         {
             Time.timeScale = 0;
         }
-        Debug.Log(vidasJugador);
     }
 
 }
