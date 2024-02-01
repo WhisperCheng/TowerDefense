@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    int vidasJugador;
-    int dinero;
-    float tiempo;
+    public int vidasJugador;
+    public int dinero;
+    public float tiempo;
     public static GameManager Instance { get; private set;}
 
     private void Awake()
@@ -36,6 +36,18 @@ public class GameManager : MonoBehaviour
         {
             Time.timeScale = 0;
         }
+    }
+    public void AumentarDinero()
+    {
+        dinero += 50;
+    }
+    public void RestaDineroTorreta()
+    {
+        dinero -= 50;
+    }
+    public void RestaDineroValla()
+    {
+        dinero -= 20;
     }
 
 }

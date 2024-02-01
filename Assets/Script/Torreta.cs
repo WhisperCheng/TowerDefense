@@ -11,7 +11,6 @@ public class Torreta : MonoBehaviour
     public GameObject bala;
     GameObject balaClon;
     public Transform spawn;
-
     Transform enemigo;
     // Start is called before the first frame update
     void Start()

@@ -27,9 +27,7 @@ public class Enemigo : MonoBehaviour
         {
             Debug.Log(collision.gameObject.tag);
 
-            //ERROR con el calculo de vida del GameManager
-
-            //collision.gameObject.GetComponent<GameManager>().QuitarVidaJugador();
+            GameManager.Instance.QuitarVidaJugador();
             Destroy(gameObject);
         }
     }
@@ -39,6 +37,7 @@ public class Enemigo : MonoBehaviour
         vidas--;
         if (vidas == 0)
         {
+            GameManager.Instance.AumentarDinero();
             Destroy(gameObject);
         }
     }

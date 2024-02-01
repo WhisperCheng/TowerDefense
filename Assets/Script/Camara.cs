@@ -7,7 +7,8 @@ public class Camara : MonoBehaviour
 {
     public GameObject torreta;
     public GameObject valla;
-    public ButtonManager buttonManager;
+    public bool torretaActivado;
+    public bool vallaActivado;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class Camara : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (buttonManager.torretaActivado == true && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (torretaActivado == true && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.dinero >= 50)
         {
             Ray laser = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -26,10 +27,11 @@ public class Camara : MonoBehaviour
 
             if (Physics.Raycast(laser, out rayoTorreta))
             {
+                GameManager.Instance.RestaDineroTorreta();
                 GameObject.Instantiate(torreta, rayoTorreta.point, Quaternion.identity);
             }
         }
-        if (buttonManager.vallaActivado == true && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (vallaActivado == true && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.dinero >= 20)
         {
             Ray laser = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -37,6 +39,7 @@ public class Camara : MonoBehaviour
 
             if (Physics.Raycast(laser,out rayoValla))
             {
+                GameManager.Instance.RestaDineroValla();
                 GameObject.Instantiate(valla, rayoValla.point, Quaternion.identity);
             }
         }

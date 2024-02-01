@@ -12,8 +12,6 @@ public class Valla : MonoBehaviour
     }
 
     // Update is called once per frame
-
-    // Le falta al codigo hacer que cuando se crea que modifique el espacio de movimiento de la IA
     void Update()
     {
         tiempo += Time.deltaTime;
