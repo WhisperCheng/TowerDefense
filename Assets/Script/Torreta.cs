@@ -24,7 +24,7 @@ public class Torreta : MonoBehaviour
     {
         int mascara = 1 << 6;
 
-        Collider[] detectado = Physics.OverlapSphere(transform.position, 2.5f, mascara);
+        Collider[] detectado = Physics.OverlapSphere(transform.position, 3.5f, mascara);
 
         if(detectado.Length > 0)
         {
@@ -41,7 +41,7 @@ public class Torreta : MonoBehaviour
                     NumBalas--;
                     cooldown = 0;
                     balaClon = Instantiate(bala, spawn.position, Quaternion.identity);
-                    balaClon.GetComponent<Rigidbody>().AddForce(transform.forward * 10, ForceMode.Impulse);
+                    balaClon.GetComponent<Rigidbody>().AddForce(transform.forward * 15, ForceMode.Impulse);
                     if (NumBalas == 0)
                     {
                         Destroy(gameObject);
@@ -58,7 +58,7 @@ public class Torreta : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(transform.position, 2.5f);
+        Gizmos.DrawWireSphere(transform.position, 3.5f);
         //Gizmos.DrawRay(transform.position, 5 * (enemigo.position - transform.position)); //NO HAY ERROR
     }
 }

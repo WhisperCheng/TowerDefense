@@ -15,7 +15,7 @@ public class Valla : MonoBehaviour
     void Update()
     {
         tiempo += Time.deltaTime;
-        Debug.Log(tiempo);
+        //Debug.Log(tiempo);
         
         if (tiempo > 10)
         {

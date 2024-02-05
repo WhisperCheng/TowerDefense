@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             vidasJugador = 3;
-            dinero = 50;
+            dinero = 5000;
             tiempo = 60;
         }
     }
