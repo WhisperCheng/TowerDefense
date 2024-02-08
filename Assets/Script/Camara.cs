@@ -9,7 +9,7 @@ public class Camara : MonoBehaviour
     public GameObject valla;
     public bool torretaActivado;
     public bool vallaActivado;
-    public float radio = 0.2f;
+    public float radio = 0.3f;
 
     // Start is called before the first frame update
     void Start()
@@ -26,12 +26,15 @@ public class Camara : MonoBehaviour
         {
             Ray laser = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            RaycastHit rayoTorreta;
+            RaycastHit[] golpesTorreta;
 
-            if (Physics.Raycast(laser, out rayoTorreta, mascara))
+
+            golpesTorreta = Physics.SphereCastAll(transform.position, radio, laser.direction, Mathf.Infinity, mascara);
+            Debug.Log(golpesTorreta.Length);
+            if (golpesTorreta.Length == 1)
             {
-                GameManager.Instance.RestaDineroTorreta();
-                GameObject.Instantiate(torreta, rayoTorreta.point, Quaternion.identity);
+                GameManager.Instance.RestaDineroValla();
+                GameObject.Instantiate(torreta, golpesTorreta[0].point, Quaternion.identity);
             }
         }
         if (vallaActivado == true && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.dinero >= 20)

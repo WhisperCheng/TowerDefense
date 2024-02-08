@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public int vidasJugador;
     public int dinero;
-    public float tiempo;
+    public float tiempoManager;
     public static GameManager Instance { get; private set;}
 
     private void Awake()
@@ -21,12 +21,13 @@ public class GameManager : MonoBehaviour
             Instance = this;
             vidasJugador = 3;
             dinero = 5000;
-            tiempo = 60;
+            tiempoManager = 60;
+            DontDestroyOnLoad(this.gameObject);
         }
     }
     private void Update()
     {
-        tiempo -= Time.deltaTime;
+        tiempoManager -= Time.deltaTime;
     }
     public void QuitarVidaJugador()
     {

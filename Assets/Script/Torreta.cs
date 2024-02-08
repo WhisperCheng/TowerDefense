@@ -12,6 +12,7 @@ public class Torreta : MonoBehaviour
     GameObject balaClon;
     public Transform spawn;
     Transform enemigo;
+    float tiempoVida;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +23,8 @@ public class Torreta : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        tiempoVida += Time.deltaTime;
+        cooldown += Time.deltaTime;
         int mascara = 1 << 6;
 
         Collider[] detectado = Physics.OverlapSphere(transform.position, 3.5f, mascara);
@@ -29,19 +32,18 @@ public class Torreta : MonoBehaviour
         if(detectado.Length > 0)
         {
             enemigo = detectado[0].transform;
-            transform.LookAt(detectado[0].transform.position);
+            transform.LookAt(enemigo.transform.position);
                         
             detectadoEnemigo = true;
             
             if (detectadoEnemigo == true)
             {
-                cooldown += Time.deltaTime;
                 if (cooldown > 1) 
                 {
                     NumBalas--;
                     cooldown = 0;
                     balaClon = Instantiate(bala, spawn.position, Quaternion.identity);
-                    balaClon.GetComponent<Rigidbody>().AddForce(transform.forward * 15, ForceMode.Impulse);
+                    balaClon.GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.Impulse);
                     if (NumBalas == 0)
                     {
                         Destroy(gameObject);
@@ -52,6 +54,10 @@ public class Torreta : MonoBehaviour
         else
         {
             detectadoEnemigo = false;
+        }
+        if (tiempoVida == 0)
+        {
+            Destroy(gameObject);
         }
     }
 

@@ -19,6 +19,6 @@ public class UIManager : MonoBehaviour
     {
         textVidas.text = "Vidas = " + GameManager.Instance.vidasJugador;
         textDinero.text = "Dinero = " + GameManager.Instance.dinero;
-        textTiempo.text = "Tiempo = " + GameManager.Instance.tiempo.ToString("F2");
+        textTiempo.text = "Tiempo = " + GameManager.Instance.tiempoManager.ToString("F2");
     }
 }

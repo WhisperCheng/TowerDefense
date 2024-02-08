@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Enemigo : MonoBehaviour
 {
-    int vidas;
+    public int vidas;
     public Transform Objetivo;
     NavMeshAgent agent;
 
@@ -13,19 +13,18 @@ public class Enemigo : MonoBehaviour
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        vidas = 3;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //agent.destination = Objetivo.transform.position;
+        agent.destination = Objetivo.transform.position;
     }
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Copa")
         {
-            Debug.Log(collision.gameObject.tag);
+            //Debug.Log(collision.gameObject.tag);
 
             GameManager.Instance.QuitarVidaJugador();
             Destroy(gameObject);

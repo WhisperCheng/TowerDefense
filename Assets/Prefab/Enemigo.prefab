@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a417ff8065a87ed4c8d837228073bd20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidas: 3
   Objetivo: {fileID: 4973212572835307528, guid: de9f22cb0c37f8640b383592a6cd84af, type: 3}
 --- !u!54 &-3506004257051227008
 Rigidbody:
