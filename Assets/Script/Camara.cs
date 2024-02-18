@@ -49,7 +49,7 @@ public class Camara : MonoBehaviour
             if (golpes.Length == 1)
             {
                 GameManager.Instance.RestaDineroValla();
-                GameObject.Instantiate(valla, golpes[0].point, Quaternion.identity);
+                GameObject.Instantiate(valla, golpes[0].point, Quaternion.Euler(-90,0,0));
             }
         }
     }

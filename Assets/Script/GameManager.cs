@@ -38,9 +38,17 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
         }
     }
-    public void AumentarDinero()
+    public void AumentarDineroEnemigo()
     {
         dinero += 50;
+    }
+    public void AumentarDineroEnemigoMetal()
+    {
+        dinero += 100;
+    }
+    public void AumentarDineroEnemigoMadera()
+    {
+        dinero += 20;
     }
     public void RestaDineroTorreta()
     {

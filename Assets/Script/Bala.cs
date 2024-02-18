@@ -29,7 +29,7 @@ public class Bala : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemigo")
+        if (collision.gameObject.tag == "Enemigo" || collision.gameObject.tag == "EnemigoMetal" || collision.gameObject.tag == "EnemigoMadera")
         {
             collision.gameObject.GetComponent<Enemigo>().QuitarVida();
             Destroy(gameObject);
