@@ -5,7 +5,9 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public int vidasJugador;
+    public int EnemigosEliminados;
     public int dinero;
+    public int puntuacion;
     public float tiempoManager;
     public static GameManager Instance { get; private set;}
 
@@ -41,14 +43,17 @@ public class GameManager : MonoBehaviour
     public void AumentarDineroEnemigo()
     {
         dinero += 50;
+        EnemigosEliminados++;
     }
     public void AumentarDineroEnemigoMetal()
     {
         dinero += 100;
+        EnemigosEliminados++;
     }
     public void AumentarDineroEnemigoMadera()
     {
         dinero += 20;
+        EnemigosEliminados++;
     }
     public void RestaDineroTorreta()
     {
@@ -58,5 +63,12 @@ public class GameManager : MonoBehaviour
     {
         dinero -= 20;
     }
-
+    public void ResultadoPuntuacion()
+    {
+        puntuacion = EnemigosEliminados * 2 + dinero;
+    }
+    public void ResultadoPuntuacionPerder()
+    {
+        puntuacion = EnemigosEliminados + dinero;
+    }
 }

@@ -33,7 +33,7 @@ public class Camara : MonoBehaviour
             Debug.Log(golpesTorreta.Length);
             if (golpesTorreta.Length == 1)
             {
-                GameManager.Instance.RestaDineroValla();
+                GameManager.Instance.RestaDineroTorreta();
                 GameObject.Instantiate(torreta, golpesTorreta[0].point, Quaternion.identity);
             }
         }

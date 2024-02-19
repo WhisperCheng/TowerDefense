@@ -4,5 +4,29 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Menu Principal.unity
+    guid: 2def606c32b72da458e2385baf99fece
+  - enabled: 1
+    path: Assets/Scenes/JuegoNormal.unity
+    guid: 9fc0d4010bbf28b4594072e72b8655ab
+  - enabled: 1
+    path: Assets/Scenes/Final.unity
+    guid: 1fce819a941f07d4aa03a5d5ae8c21c9
+  - enabled: 1
+    path: Assets/Scenes/Instrucciones.unity
+    guid: 7b2e2437ab6814c4c97229e102cad2a2
+  - enabled: 1
+    path: Assets/Scenes/Muerte.unity
+    guid: 8067ed22e93ac074aacd73e7cff31fc9
+  - enabled: 1
+    path: Assets/Scenes/Nivel.unity
+    guid: 13c017481b732c24b91a7f000aa1df43
+  - enabled: 1
+    path: Assets/Scenes/JuegoDificil.unity
+    guid: 8fc105a2ef878ba4aa69f429f75a3879
+  - enabled: 1
+    path: Assets/Scenes/JuegoFacil.unity
+    guid: 9ce6a32051b701949adf598e2552bd31
   m_configObjects: {}
