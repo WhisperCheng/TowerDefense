@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641275, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1120,11 +1120,9 @@ MonoBehaviour:
   ActivarNivel: 0
   ActivarInstrucciones: 0
   ActivarAtras: 0
-  ActivarMuerte: 0
-  ActivarFinal: 0
-  ActivarJuego1: 0
-  ActivarJuego2: 0
-  ActivarJuego3: 0
+  ActivarJuegoFacil: 0
+  ActivarJuegoNormal: 0
+  ActivarJuegoDificil: 0
 --- !u!4 &1418318437
 Transform:
   m_ObjectHideFlags: 0
@@ -1135,6 +1133,55 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 574.0017, y: 258.31537, z: -17.705627}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1474609550
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1474609552}
+  - component: {fileID: 1474609551}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1474609551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474609550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caeca140a7fab03438f48337c5a2faa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vidasJugador: 0
+  EnemigosEliminados: 0
+  dinero: 0
+  puntuacion: 0
+  tiempoManager: 0
+--- !u!4 &1474609552
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474609550}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 598.9489, y: 126.405334, z: 66.93768}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1316,3 +1363,4 @@ SceneRoots:
   - {fileID: 1012858821}
   - {fileID: 1130567933}
   - {fileID: 1418318437}
+  - {fileID: 1474609552}
