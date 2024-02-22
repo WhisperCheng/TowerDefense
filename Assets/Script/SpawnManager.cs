@@ -17,13 +17,25 @@ public class SpawnManager : MonoBehaviour
     void Update()
     {
         cooldown += Time.deltaTime;
-        if (GameManager.Instance.tiempoManager <= 58 && cooldown >= 3)
+        if (GameManager.Instance.tiempoManager <= 60 && cooldown >= 3)
         {
             Vector3 position = new Vector3(Random.Range(-5.72f, 12.43f), 0, Random.Range(6.63f, 9));
             Instantiate(listaEnemigos[Random.Range(0,3)], position, Quaternion.identity);
             cooldown = 0;
         }
-        if (GameManager.Instance.tiempoManager <= 30 && cooldown >= 1) 
+        if (GameManager.Instance.tiempoManager <= 45 && cooldown >= 2) 
+        {
+            Vector3 position = new Vector3(Random.Range(-5.72f, 12.43f), 0, Random.Range(6.63f, 9));
+            Instantiate(listaEnemigos[Random.Range(0, 3)], position, Quaternion.identity);
+            cooldown = 0;
+        }
+        if (GameManager.Instance.tiempoManager <= 30 && cooldown >= 1)
+        {
+            Vector3 position = new Vector3(Random.Range(-5.72f, 12.43f), 0, Random.Range(6.63f, 9));
+            Instantiate(listaEnemigos[Random.Range(0, 3)], position, Quaternion.identity);
+            cooldown = 0;
+        }
+        if (GameManager.Instance.tiempoManager <= 8 && cooldown >= 0.5)
         {
             Vector3 position = new Vector3(Random.Range(-5.72f, 12.43f), 0, Random.Range(6.63f, 9));
             Instantiate(listaEnemigos[Random.Range(0, 3)], position, Quaternion.identity);

@@ -32,7 +32,7 @@ public class EscenasManager : MonoBehaviour
         {
             SceneManager.LoadScene("Instrucciones");
         }
-        if (GameManager.Instance.vidasJugador == 0) 
+        if (GameManager.Instance.vidasJugador == 0)
         {
             GameManager.Instance.ResultadoPuntuacionPerder();
             SceneManager.LoadScene("Muerte");
@@ -44,14 +44,20 @@ public class EscenasManager : MonoBehaviour
         }
         if (ActivarJuegoFacil == true)
         {
+            GameManager.Instance.tiempoManager = 65;
+            GameManager.Instance.dinero = 100;
             SceneManager.LoadScene("JuegoFacil");
         }
         if (ActivarJuegoNormal == true)
         {
+            GameManager.Instance.dinero = 200;
+            GameManager.Instance.tiempoManager = 65;
             SceneManager.LoadScene("JuegoNormal");
         }
         if (ActivarJuegoDificil == true)
         {
+            GameManager.Instance.dinero = 300;
+            GameManager.Instance.tiempoManager = 65;
             SceneManager.LoadScene("JuegoDificil");
         }
     }

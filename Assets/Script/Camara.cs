@@ -22,6 +22,17 @@ public class Camara : MonoBehaviour
     {
         int mascara = 1 << 7;
 
+        if (Input.GetKeyDown(KeyCode.Alpha1)) 
+        {
+            torretaActivado = false;
+            vallaActivado = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            torretaActivado= true;
+            vallaActivado = false;
+        }
+
         if (torretaActivado == true && Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.dinero >= 50)
         {
             Ray laser = Camera.main.ScreenPointToRay(Input.mousePosition);

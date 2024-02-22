@@ -17,7 +17,7 @@ public class Torreta : MonoBehaviour
     void Start()
     {
         detectadoEnemigo = false;
-        NumBalas = 10;   
+        NumBalas = 15;   
     }
 
     // Update is called once per frame
@@ -38,12 +38,12 @@ public class Torreta : MonoBehaviour
             
             if (detectadoEnemigo == true)
             {
-                if (cooldown > 1) 
+                if (cooldown > 0.5) 
                 {
                     NumBalas--;
                     cooldown = 0;
                     balaClon = Instantiate(bala, spawn.position, Quaternion.identity);
-                    balaClon.GetComponent<Rigidbody>().AddForce(transform.forward * 20, ForceMode.Impulse);
+                    balaClon.GetComponent<Rigidbody>().AddForce(transform.forward * 25, ForceMode.Impulse);
                     if (NumBalas == 0)
                     {
                         Destroy(gameObject);

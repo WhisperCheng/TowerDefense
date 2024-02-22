@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public int vidasJugador;
-    public int EnemigosEliminados;
+    public int PuntosEnemigosEliminados;
     public int dinero;
     public int puntuacion;
     public float tiempoManager;
@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             vidasJugador = 3;
-            dinero = 5000;
-            tiempoManager = 10;
+            dinero = 100;
+            tiempoManager = 65;
             DontDestroyOnLoad(this.gameObject);
         }
     }
@@ -39,17 +39,17 @@ public class GameManager : MonoBehaviour
     public void AumentarDineroEnemigo()
     {
         dinero += 50;
-        EnemigosEliminados++;
+        PuntosEnemigosEliminados += 20;
     }
     public void AumentarDineroEnemigoMetal()
     {
         dinero += 100;
-        EnemigosEliminados++;
+        PuntosEnemigosEliminados += 50;
     }
     public void AumentarDineroEnemigoMadera()
     {
         dinero += 20;
-        EnemigosEliminados++;
+        PuntosEnemigosEliminados += 10;
     }
     public void RestaDineroTorreta()
     {
@@ -61,10 +61,10 @@ public class GameManager : MonoBehaviour
     }
     public void ResultadoPuntuacion()
     {
-        puntuacion = EnemigosEliminados * 2 + dinero;
+        puntuacion = PuntosEnemigosEliminados * 2 + dinero;
     }
     public void ResultadoPuntuacionPerder()
     {
-        puntuacion = EnemigosEliminados + dinero;
+        puntuacion = PuntosEnemigosEliminados + dinero;
     }
 }
